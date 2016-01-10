@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="root" prefHeight="541.0" prefWidth="826.0" style="-fx-background-color: #232735;" stylesheets="@style.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="game.store.MyGamesController">
+    <children>
+      <TableView fx:id="top_games" layoutX="37.0" layoutY="64.0" opacity="0.9" prefHeight="433.0" prefWidth="752.0" AnchorPane.bottomAnchor="44.0" AnchorPane.leftAnchor="37.0" AnchorPane.rightAnchor="37.0" AnchorPane.topAnchor="64.0">
+        <columns>
+          <TableColumn fx:id="nombre" prefWidth="183.0" text="Nombre" />
+          <TableColumn fx:id="descripcion" minWidth="0.0" prefWidth="423.0" text="Descripción" />
+            <TableColumn fx:id="precio" minWidth="0.0" prefWidth="120.0" text="Precio" />
+        </columns>
+      </TableView>
+      <Label fx:id="user" layoutX="37.0" layoutY="14.0" prefHeight="38.0" prefWidth="298.0" text="Test" textFill="#fa8941" AnchorPane.leftAnchor="37.0" AnchorPane.rightAnchor="368.0" AnchorPane.topAnchor="14.0">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

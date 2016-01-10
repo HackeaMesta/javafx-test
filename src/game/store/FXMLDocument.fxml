@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.web.*?>
+<?import java.net.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="root" prefHeight="581.0" prefWidth="870.0" style="-fx-background-color: #232735;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.store.FXMLDocumentController">
+    <children>
+      <MenuBar layoutX="14.0" layoutY="14.0" opacity="0.9" prefHeight="29.0" prefWidth="766.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+        <menus>
+            <Menu mnemonicParsing="false" text="Game Store">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#openAddGame" text="Subir Juego" />
+                <MenuItem mnemonicParsing="false" onAction="#exitMenu" text="Salir" />
+              </items>
+            </Menu>
+            <Menu fx:id="mi_perfil" mnemonicParsing="false" text="Mi Cuenta">
+                <items>
+                    <MenuItem mnemonicParsing="false" onAction="#openMyProfile" text="Mi perfil" />
+                    <MenuItem mnemonicParsing="false" onAction="#openMyGames" text="Juegos en mi lista" />
+                </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Cart">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#openCartWindow" text="My Cart" />
+                  <MenuItem mnemonicParsing="false" text="Pagar" />
+               </items></Menu>
+            <Menu fx:id="admin_menu" mnemonicParsing="false" text="Administracion">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#openAdmin" text="Panel de Administración" />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <TableView fx:id="top_games" layoutX="20.0" layoutY="208.0" onMousePressed="#handle" opacity="0.9" prefHeight="253.0" prefWidth="850.0" stylesheets="@style.css" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="308.0">
+        <columns>
+          <TableColumn fx:id="nombre" prefWidth="209.0" text="Nombre" />
+          <TableColumn fx:id="descripcion" prefWidth="500.0" text="Descripción" />
+            <TableColumn fx:id="precio" minWidth="0.0" prefWidth="124.0" text="Precio" />
+        </columns>
+      </TableView>
+      <ImageView fx:id="top" fitHeight="241.0" fitWidth="756.0" layoutX="114.0" layoutY="51.0"  opacity="0.9" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="125.0" AnchorPane.rightAnchor="125.0" AnchorPane.topAnchor="51.0" />
+    </children>
+</AnchorPane>

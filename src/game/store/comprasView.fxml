@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="root" prefHeight="523.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.store.ComprasViewController">
+   <children>
+      <TableView fx:id="compras" layoutX="40.0" layoutY="62.0" opacity="0.9" prefHeight="386.0" prefWidth="520.0" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="60.0">
+        <columns>
+          <TableColumn fx:id="fecha" prefWidth="132.0" text="Fecha" />
+          <TableColumn fx:id="usuario" prefWidth="133.0" text="Usuario" />
+          <TableColumn fx:id="total_col" prefWidth="116.0" text="Total" />
+          <TableColumn fx:id="productos" prefWidth="124.0" text="Cant. Prod." />
+        </columns>
+      </TableView>
+      <TextField fx:id="desde" layoutX="40.0" layoutY="22.0" />
+      <TextField fx:id="hasta" layoutX="237.0" layoutY="22.0" />
+      <Button layoutX="448.0" layoutY="22.0" mnemonicParsing="false" onAction="#filtar_btn" text="Filtrar" />
+      <Label fx:id="total" layoutX="40.0" layoutY="459.0" prefHeight="41.0" prefWidth="520.0" textAlignment="RIGHT" textFill="#1f8fff" wrapText="true">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

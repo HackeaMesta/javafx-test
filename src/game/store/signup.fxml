@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="login" prefHeight="352.0" prefWidth="627.0" style="-fx-background-color: #232735;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.store.SignupController">
+   <children>
+      <TextField fx:id="nickname" layoutX="65.0" layoutY="51.0" opacity="0.9" />
+      <Label layoutX="65.0" layoutY="29.0" text="Nickname:" textFill="#d0d0d0" />
+      <Label layoutX="65.0" layoutY="93.0" text="Email:" textFill="#d0d0d0" />
+      <TextField fx:id="email" layoutX="65.0" layoutY="115.0" opacity="0.9" />
+      <Label layoutX="65.0" layoutY="161.0" text="Contraseña:" textFill="#d0d0d0" />
+      <Label layoutX="65.0" layoutY="228.0" text="Confirmar contraseña:" textFill="#d0d0d0" />
+      <PasswordField fx:id="password" layoutX="65.0" layoutY="183.0" opacity="0.9" />
+      <PasswordField fx:id="password2" layoutX="65.0" layoutY="250.0" opacity="0.9" />
+      <Label layoutX="285.0" layoutY="29.0" text="Nombre:" textFill="#d0d0d0" />
+      <TextField fx:id="nombre" layoutX="285.0" layoutY="51.0" opacity="0.9" />
+      <TextField fx:id="apellidoP" layoutX="285.0" layoutY="115.0" opacity="0.9" />
+      <TextField fx:id="apellidoM" layoutX="285.0" layoutY="183.0" opacity="0.9" />
+      <Label layoutX="285.0" layoutY="161.0" text="Apellido Materno:" textFill="#d0d0d0" />
+      <Label layoutX="285.0" layoutY="93.0" text="Apellido Paterno:" textFill="#d0d0d0" />
+      <CheckBox fx:id="tos" layoutX="283.0" layoutY="235.0" mnemonicParsing="false" text="Acepto los" textFill="#d0d0d0">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </CheckBox>
+      <Hyperlink fx:id="tos_text" layoutX="356.0" layoutY="234.0" text="Terminos y Condiciones">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Hyperlink>
+      <ImageView fitHeight="120.0" fitWidth="115.0" layoutX="486.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="btn_login" layoutX="131.0" layoutY="306.0" mnemonicParsing="false" onAction="#btn_login_click" opacity="0.9" text="Iniciar Sesión" />
+      <Button fx:id="btn_signup" defaultButton="true" layoutX="383.0" layoutY="306.0" mnemonicParsing="false" onAction="#btn_signup_click" opacity="0.9" text="Registro" />
+      <Label fx:id="notification" layoutX="282.0" layoutY="268.0" prefHeight="15.0" prefWidth="319.0" textFill="#ff3b3b" />
+   </children>
+</AnchorPane>

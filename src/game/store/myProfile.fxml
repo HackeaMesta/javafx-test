@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="profile" prefHeight="465.0" prefWidth="790.0" style="-fx-background-color: #232735;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.store.MyProfileController">
+   <children>
+      <Label fx:id="notification" layoutX="127.0" layoutY="388.0" prefHeight="15.0" prefWidth="319.0" textFill="#ff3b3b" />
+      <Button fx:id="btn_signup" defaultButton="true" layoutX="363.0" layoutY="316.0" mnemonicParsing="false" onAction="#btn_update_click" opacity="0.85" text="Actualizar" />
+      <Button fx:id="btn_login" layoutX="86.0" layoutY="316.0" mnemonicParsing="false" onAction="#btn_delete_click" opacity="0.85" style="-fx-background-color: #FE2E2E;" text="Eliminar mi Cuenta" textFill="WHITE" />
+      <Label layoutX="277.0" layoutY="153.0" text="Apellido Paterno:" textFill="#d0d0d0" />
+      <Label layoutX="277.0" layoutY="221.0" text="Apellido Materno:" textFill="#d0d0d0" />
+      <TextField fx:id="apellidoM" layoutX="277.0" layoutY="243.0" opacity="0.9" />
+      <TextField fx:id="apellidoP" layoutX="277.0" layoutY="175.0" opacity="0.9" />
+      <TextField fx:id="nombre" layoutX="277.0" layoutY="111.0" opacity="0.9" />
+      <Label layoutX="277.0" layoutY="89.0" text="Nombre:" textFill="#d0d0d0" />
+      <PasswordField fx:id="password2" layoutX="58.0" layoutY="246.0" opacity="0.9" />
+      <PasswordField fx:id="password" layoutX="58.0" layoutY="179.0" opacity="0.9" />
+      <Label layoutX="58.0" layoutY="224.0" text="Confirmar contraseña:" textFill="#d0d0d0" />
+      <Label layoutX="58.0" layoutY="157.0" text="Contraseña:" textFill="#d0d0d0" />
+      <TextField fx:id="email" layoutX="58.0" layoutY="111.0" opacity="0.9" />
+      <Label layoutX="58.0" layoutY="89.0" text="Email:" textFill="#d0d0d0" />
+      <Label fx:id="nickname" layoutX="44.0" layoutY="44.0" prefHeight="37.0" prefWidth="390.0" text="Nickname:" textFill="#faa03e">
+         <font>
+            <Font size="22.0" />
+         </font></Label>
+      <Label fx:id="saldo" layoutX="485.0" layoutY="44.0" prefHeight="37.0" prefWidth="291.0" text="Nickname:" textFill="#faa03e">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <TextField fx:id="saldo_codigo" layoutX="485.0" layoutY="115.0" opacity="0.9" prefHeight="25.0" prefWidth="250.0" promptText="6 digitos" />
+      <Label layoutX="485.0" layoutY="93.0" text="Ingresa tu código para recargar saldo:" textFill="#d0d0d0" />
+      <Button fx:id="btn_saldo" defaultButton="true" layoutX="671.0" layoutY="160.0" mnemonicParsing="false" onAction="#btn_saldo_click" opacity="0.85" text="Validar" />
+      <Label fx:id="notification_saldo" layoutX="491.0" layoutY="214.0" prefHeight="15.0" prefWidth="256.0" textFill="#ff3b3b" />
+   </children>
+</AnchorPane>

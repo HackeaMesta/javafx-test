@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="profile" prefHeight="472.0" prefWidth="588.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.store.AddGameController">
+   <children>
+      <TextField fx:id="editor" editable="false" layoutX="55.0" layoutY="90.0" opacity="0.9" />
+      <TextField fx:id="titulo" layoutX="55.0" layoutY="160.0" opacity="0.9" />
+      <Label layoutX="55.0" layoutY="68.0" text="Editor:" textFill="#e8e4e4" />
+      <Label layoutX="55.0" layoutY="138.0" text="Titulo:" textFill="#e8e4e4" />
+      <Label layoutX="55.0" layoutY="239.0" text="Precio:" textFill="#e8e4e4" />
+      <TextField fx:id="precio" layoutX="55.0" layoutY="261.0" opacity="0.9" />
+      <Label layoutX="55.0" layoutY="308.0" text="Categoria:" textFill="#e8e4e4" />
+      <TextField fx:id="categoria" layoutX="55.0" layoutY="330.0" opacity="0.9" />
+      <TextArea fx:id="descripcion" layoutX="279.0" layoutY="92.0" opacity="0.9" prefHeight="161.0" prefWidth="268.0" wrapText="true" />
+      <Label layoutX="279.0" layoutY="68.0" text="Descripción:" textFill="#e8e4e4" />
+      <Button fx:id="upload_files" layoutX="279.0" layoutY="274.0" mnemonicParsing="false" onAction="#upload_file" text="Subir Imagenes" />
+      <Button fx:id="save" layoutX="279.0" layoutY="415.0" mnemonicParsing="false" onAction="#save_btn_click" style="-fx-background-color: #00BFFF;" text="Guardar" />
+      <Label fx:id="images_label" layoutX="279.0" layoutY="316.0" prefHeight="86.0" prefWidth="268.0" textFill="#c6c6c6" wrapText="true" />
+      <Label fx:id="notification" layoutX="82.0" layoutY="387.0" prefHeight="15.0" prefWidth="448.0" textFill="#ff1919">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

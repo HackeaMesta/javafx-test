@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="sample-game" fx:id="game" prefHeight="565.0" prefWidth="687.0" style="-fx-background-color: #232735;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.store.ShowGameController">
+   <children>
+      <Label fx:id="titulo" layoutX="50.0" layoutY="28.0" prefHeight="32.0" prefWidth="433.0" textAlignment="CENTER" textFill="#ff9b49" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="28.0">
+         <font>
+            <Font name="FreeSans Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="editor" layoutX="50.0" layoutY="67.0" prefHeight="15.0" prefWidth="364.0" textFill="#4ba6e8" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="65.0" />
+      <TextArea fx:id="descripcion" editable="false" layoutX="50.0" layoutY="370.0" prefHeight="173.0" prefWidth="443.0" style="-fx-text-fill: white;" stylesheets="@style.css" wrapText="true" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="194.0" AnchorPane.topAnchor="370.0">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets></TextArea>
+      <ImageView fx:id="slider" fitHeight="229.0" fitWidth="587.0" layoutX="50.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="243.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="93.0" />
+      <Button fx:id="comprar" layoutX="509.0" layoutY="402.0" mnemonicParsing="false" onAction="#comprar_btn_click" prefHeight="25.0" prefWidth="94.0" style="-fx-background-color: #4ba6e8;" text="Comprar" textFill="#070707" AnchorPane.rightAnchor="84.0" AnchorPane.topAnchor="402.0" />
+      <Label fx:id="descargas" layoutX="509.0" layoutY="457.0" prefHeight="15.0" prefWidth="127.0" textFill="#4ba6e8" AnchorPane.rightAnchor="51.0" />
+      <Label fx:id="notification" layoutX="62.0" layoutY="331.0" prefHeight="15.0" prefWidth="411.0" textFill="#4ba6e8" />
+      <Label fx:id="precio" layoutX="509.0" layoutY="370.0" prefHeight="24.0" prefWidth="142.0" textFill="#ff8440" AnchorPane.rightAnchor="36.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
