@@ -53,9 +53,9 @@ public class MyProfileController implements Initializable {
      * Initializes the controller class.
      */
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        nickname.setText("Mi perfil: " + session.nickname);
-        userFunction = new User_Standar(session.nickname);
+    public void initialize(URL url, ResourceBundle rb) {        
+        nickname.setText("Mi perfil: " + session.perfil);
+        userFunction = new User_Standar(session.perfil);
         try {
             for (String[] data : userFunction.myData()) {
                 email.setText(data[1]);
@@ -92,7 +92,7 @@ public class MyProfileController implements Initializable {
         String pass1 = password.getText();
         String pass2 = password2.getText();
 
-        userAction = new Users(session.nickname, email_, pass1, pass2, nombre_, apellido_p, apellido_m, foto, notification);
+        userAction = new Users(session.perfil, email_, pass1, pass2, nombre_, apellido_p, apellido_m, foto, notification);
 
         if (userAction.updateUser()) {
             notification.setText("Tu cuenta se actualizo correctamnte");

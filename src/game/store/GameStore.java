@@ -10,12 +10,13 @@ import javafx.stage.Stage;
  *
  * @author @HackeaMesta
  */
+
 public class GameStore extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        //Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
         Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
+        //Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
         Scene scene = new Scene(root);
         stage.setTitle("Iniciar Sesion");
         stage.setScene(scene);

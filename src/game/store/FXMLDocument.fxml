@@ -29,7 +29,6 @@
             <Menu mnemonicParsing="false" text="Cart">
                <items>
                   <MenuItem mnemonicParsing="false" onAction="#openCartWindow" text="My Cart" />
-                  <MenuItem mnemonicParsing="false" text="Pagar" />
                </items></Menu>
             <Menu fx:id="admin_menu" mnemonicParsing="false" text="Administracion">
                <items>

@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.concurrent.Task;
@@ -18,8 +19,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.PieChart;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Modality;
@@ -30,6 +33,7 @@ import javafx.stage.Stage;
  *
  * @author @HackeaMesta
  */
+
 public class AdminController implements Initializable {
 
     private User_Admin adminFunctions;
@@ -47,7 +51,6 @@ public class AdminController implements Initializable {
     private TableColumn<Game, String> editor;
     @FXML
     private TableColumn<Game, Float> fecha;
-
     @FXML
     private TableView<User> tabla_usuarios;
     @FXML
@@ -56,6 +59,12 @@ public class AdminController implements Initializable {
     private TableColumn<User, String> email;
     @FXML
     private TableColumn<User, String> name;
+    @FXML
+    private TextField codigo;
+    @FXML
+    private TextField monto;
+    @FXML
+    private Label notification;
 
     public ObservableList<Game> games;
     public ObservableList<User> users;
@@ -117,7 +126,26 @@ public class AdminController implements Initializable {
     }
 
     public void openGame(Integer id, String titulo) {
-
+        Store compra = new Store(session.nickname);
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    compra.id_videojuego = id;
+                    //Abrir nueva ventana con info del juego
+                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ShowGame.fxml"));
+                    Parent main_panel;
+                    main_panel = (Parent) fxmlLoader.load();
+                    Stage stage = new Stage();
+                    stage.initModality(Modality.APPLICATION_MODAL);
+                    stage.setScene(new Scene(main_panel));
+                    stage.setTitle(titulo);
+                    stage.show();
+                } catch (IOException ex) {
+                    Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        });
     }
 
     public void handleUsers(MouseEvent evt) {//Listener doble click
@@ -125,8 +153,7 @@ public class AdminController implements Initializable {
             Task<Void> task = new Task<Void>() {
                 @Override
                 protected Void call() throws Exception {
-                    //System.out.println(top_games.getSelectionModel().getSelectedItem().getId_videojuego().toString());
-                    openUser(tabla_usuarios.getSelectionModel().getSelectedItem().getUser());
+                    openUser(tabla_usuarios.getSelectionModel().getSelectedItem().getUser().toString());
                     return null;
                 }
             };
@@ -135,8 +162,16 @@ public class AdminController implements Initializable {
         }
     }
 
-    public void openUser(String nickname) {
-
+    public void openUser(String username) throws IOException {
+        session.perfil = username;
+        //Abrir nueva ventana con info del juego
+        FXMLLoader newWin = new FXMLLoader(getClass().getResource("myProfile.fxml"));
+        Parent main_win;
+        main_win = (Parent) newWin.load();
+        Stage stage = new Stage();
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.setScene(new Scene(main_win));
+        stage.show();
     }
 
     public void getUsers() throws ClassNotFoundException {
@@ -180,6 +215,16 @@ public class AdminController implements Initializable {
             conn.close();
         } catch (SQLException ex) {
             Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void code_btn(ActionEvent evt) throws ClassNotFoundException, SQLException {
+        String code = codigo.getText();
+        Float cantidad = Float.parseFloat(monto.getText());
+        if (adminFunctions.createCode(code, cantidad)) {
+            notification.setText("El codigo se creo correctamente");
+        } else {
+            notification.setText("Ocurrio un error intenta nuevamente!");
         }
     }
 }

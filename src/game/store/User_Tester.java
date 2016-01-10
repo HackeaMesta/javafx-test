@@ -11,6 +11,7 @@ import java.util.Date;
  *
  * @author @HackeaMesta
  */
+
 public class User_Tester extends User_Standar {
 
     private String nickname;
@@ -63,12 +64,17 @@ public class User_Tester extends User_Standar {
         return status;
     }
 
-    public void deleteGame(Integer id_videojuego) throws ClassNotFoundException, SQLException {
+    public boolean deleteGame(Integer id_videojuego) throws ClassNotFoundException, SQLException {
+        boolean status = false;
         conn.open();
 
         if (conn.execute("DELETE FROM VIDEOJUEGOS WHERE ID_VIDEOJUEGO = " + id_videojuego)) {
-
+            if (conn.execute("DELETE FROM videojuego_meta WHERE id_videojuego = " + id_videojuego)) {
+                status = true;
+            }
         }
+        
+        return status;
     }
 
     public ArrayList showMyGames() throws ClassNotFoundException, SQLException {

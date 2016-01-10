@@ -7,9 +7,11 @@ import java.sql.SQLException;
  *
  * @author @HackeaMesta
  */
+
 public class session {
     public static String tipo_usuario;
     public static String nickname;
+    public static String perfil;
 
     private Connector conn;
 
@@ -21,8 +23,9 @@ public class session {
         */
         this.tipo_usuario = "2";
         this.nickname = null;
+        this.perfil = null;
         this.conn = new Connector();
-    }
+    }  
     
     public boolean isAdmin() {
         if (this.tipo_usuario == "0") {

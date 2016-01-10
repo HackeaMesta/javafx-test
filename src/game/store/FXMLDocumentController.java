@@ -53,12 +53,10 @@ public class FXMLDocumentController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         //inicia una nueva session de compra
+        //For Testing...
         /*
-        For Testing...
-        
         session.nickname = "hackeamesta";
         session.tipo_usuario = "0";
-        Testing
         */
         compra = new Store(session.nickname);
         
@@ -133,6 +131,7 @@ public class FXMLDocumentController implements Initializable {
     }
 
     public void openMyProfile(ActionEvent evt) throws IOException {
+        session.perfil = session.nickname;
         //Abrir nueva ventana con info del juego
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("myProfile.fxml"));
         Parent main_panel;

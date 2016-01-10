@@ -14,6 +14,7 @@ import javafx.scene.chart.XYChart;
  *
  * @author @HackeaMesta
  */
+
 public class User_Admin extends User_Tester {
 
     private String nickname;
@@ -35,12 +36,12 @@ public class User_Admin extends User_Tester {
         //Obtiene fechas a calcular
         Calendar calendar = Calendar.getInstance();
         ArrayList<String> fechas = new ArrayList<String>();
-        
+
         calendar.add(Calendar.DATE, 0);
         Integer mes = Calendar.getInstance().get(Calendar.MONTH) + 1;
         fechas.add(Calendar.getInstance().get(Calendar.YEAR) + "-" + mes + "-" + calendar.getTime().getDate());
         calendar = Calendar.getInstance();
-        
+
         for (int i = 1; i < 6; i++) {
             calendar.add(Calendar.DATE, -i);
             mes = Calendar.getInstance().get(Calendar.MONTH) + 1;
@@ -66,18 +67,18 @@ public class User_Admin extends User_Tester {
                 ventas.getData().add(new XYChart.Data<String, Number>(datos[0].toString(), Integer.parseInt(datos[1])));
             }
         }
-        
+
         ventas.setName("Ventas");
         lineChart.getData().add(ventas);
-        
+
         /*
         Top Games mas descargados
-        */
+         */
         ObservableList<PieChart.Data> list = FXCollections.observableArrayList();
-        
+
         ResultSet top_games = conn.getData("SELECT TITULO, DESCARGAS FROM VIDEOJUEGOS ORDER BY DESCARGAS DESC LIMIT 0,5;");
-        while(top_games.next()) {
-            String titulo = top_games.getString(1).substring(0, 13) + "... ("+top_games.getString(2)+")"; 
+        while (top_games.next()) {
+            String titulo = top_games.getString(1).substring(0, 13) + "... (" + top_games.getString(2) + ")";
             list.add(new PieChart.Data(titulo, top_games.getInt(2)));
         }
         pieChart.setData(list);
@@ -120,9 +121,14 @@ public class User_Admin extends User_Tester {
 
         }
     }
-    
-    public void ventasDetails() throws ClassNotFoundException, SQLException {
+
+    public boolean createCode(String code, Float monto) throws ClassNotFoundException, SQLException {
+        boolean status = false;
         conn.open();
-        
+        if (conn.execute("INSERT INTO codigos (codigo, cantidad) VALUES ('" + code + "', '" + monto + "');")) {
+            status = true;
+        }
+        conn.close();
+        return status;
     }
 }
